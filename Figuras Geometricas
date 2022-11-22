@@ -1,0 +1,64 @@
+import sys
+import pygame
+
+pygame.init()
+
+ancho = 400
+alto = 500
+
+superficie = pygame.display.set_mode((ancho, alto))
+
+# Titulo de ventana
+pygame.display.set_caption("Juego pygame")
+
+# Colores
+verde = (52, 157, 89)
+azul = (0, 0, 255)
+negro = (0, 0, 0,)
+blanco = (255, 255, 255)
+
+rectangulo = pygame.Rect(100, 160, 120, 60)
+
+# Centrar el rentangulo
+rectangulo.center = (ancho // 2, alto // 2)
+
+print(rectangulo.x)
+print(rectangulo.y)
+
+rectangulo2 = (100, 100, 80, 40)
+
+# Salir de la ventana
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+    superficie.fill(blanco)
+
+    # Rectangulo
+
+    # pygame.draw.rect(superficie, azul, (100, 100, 80, 40))
+
+    # Circulo
+
+    # pygame.draw.circle(superficie, verde, (200, 300), 100)
+
+    # Linea
+
+    # pygame.draw.line(superficie, negro, (100, 100), (200, 300), 5)
+
+    # Triangulos
+
+    # pygame.draw.polygon(superficie, verde, ((0,400), (100, 300), (200, 400)))
+
+    # Pentagono
+
+    pygame.draw.polygon(superficie, azul, (
+        (146, 0),
+        (291, 106),
+        (236, 277),
+        (56, 277),
+        (0, 106)
+    ))
+
+    pygame.display.update()
